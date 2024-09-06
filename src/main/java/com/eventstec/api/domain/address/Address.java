@@ -1,28 +1,28 @@
-package com.eventstec.api.domain.coupon;
+package com.eventstec.api.domain.address;
 
 import com.eventstec.api.domain.event.Event;
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-import java.util.Date;
 import java.util.UUID;
 
 @Entity
-@Table(name = "coupon")
+@Table(name = "address")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Coupon {
+public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
-    private String code;
+    private String city;
 
-    private Integer discount;
-
-    private Date valid;
+    private String uf;
 
     @ManyToOne
     @JoinColumn(name = "event_id")
